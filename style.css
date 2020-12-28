@@ -6,23 +6,11 @@ body {
   background-color: #f2f6f9;
   text-transform: uppercase;
 }
-p {
-  font-family: 'Barlow Condensed', sans-serif;
-}
-.active {
-  color: gray;
-  fill: gray;
-}
-.hidden {
-  display: none;
-}
-svg {
-  height: 3vh;
-  width: 3vh;
-}
-svg:hover {
-  fill: #e69e5b;
-}
+p { font-family: 'Barlow Condensed', sans-serif; }
+.active { color: gray; fill: gray; }
+.hidden { display: none; }
+svg { height: 3vh; width: 3vh; }
+svg:hover { fill: #e69e5b; }
 
 
 @media only screen and (max-width: 1284px) {
@@ -30,9 +18,7 @@ svg:hover {
     padding: 10vw;
   }
 }
-.mainContainer {
-  padding: 5vw 10vw 10vw 10vw;
-}
+.mainContainer { padding: 5vw 10vw 10vw 10vw; }
 
 .flex-row {
   display: flex;
@@ -40,14 +26,7 @@ svg:hover {
   justify-content: space-between;
   align-items: center;
 }
-.flex-row > div {
-  padding: 2vh;
-}
-
-
-
-
-
+.flex-row > div { padding: 2vh; }
 .flex-row > p, #searchContent > p {
   font-size: x-large;
   font-weight: 600;
@@ -55,10 +34,9 @@ svg:hover {
 }
 
 
-/* SEARCH */
-.searchForm {
-  display: flex;
-}
+
+/* SEARCH PAGE */
+.searchForm { display: flex; }
 input[type=text] {
   transition: background-color 1s ease-in;
   border: none;
@@ -75,19 +53,13 @@ input[type=text]:focus {
   background-color: #eeeeee;
   outline: none;
 }
-
-
-
-/* SEARCH PAGE */
 #itemList {
   height: 70vh;
   overflow: scroll;
   margin: 0 0 5vh 0;
   scrollbar-width: none;
 }
-#itemList::-webkit-scrollbar {
-  display: none;
-}
+#itemList::-webkit-scrollbar { display: none; }
 .itemContainer {
   display: flex;
   flex-direction: column;
@@ -103,15 +75,8 @@ input[type=text]:focus {
   justify-content: space-evenly;
   padding-bottom: 2vh;
 }
-.itemTitle {
-  color: black;
-  font-size: medium;
-  font-weight: 600;
-}
-.itemInfo {
-  color: gray;
-  font-size: small;
-}
+.itemTitle { color: black; font-size: medium; font-weight: 600; }
+.itemInfo { color: gray; font-size: small; }
 .inputContainer {
   display: flex;
   flex-direction: column;
@@ -129,27 +94,12 @@ input[type=text]:focus {
   flex-grow: 8;
   text-align: center;
 }
-.inputCustomAmount::-webkit-input-placeholder {
-  text-align: center;
-}
-.button {
-  border: none;
-  border-radius: 10px;
-  font-size: large;
-}
-.square {
-  height: 7vh;
-  width: 7vh;
-}
-.left {
-  margin-right: 2vh;
-}
-.right {
-  margin-left: 2vh;
-}
-.button:focus {
-  outline: none;
-}
+.inputCustomAmount::-webkit-input-placeholder { text-align: center; }
+.button { border: none; border-radius: 10px; font-size: large; }
+.square { height: 7vh; width: 7vh; }
+.left { margin-right: 2vh; }
+.right { margin-left: 2vh; }
+.button:focus { outline: none; }
 .logButton {
   background-color: #e69e5b;
   width: 100%;
@@ -162,22 +112,19 @@ input[type=text]:focus {
 
 
 
-/* Home Page */
+/* HOME PAGE */
 .totalsGrid {
   display: grid;
   grid-template-columns: 100%;
   grid-gap: 2vh;
   padding-bottom: 2vh;
 }
-.totalsGrid > button {
-  font-weight: 600;
-}
 .totalsContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   border-radius: 10px;
-  padding: 0 1vh;
+  padding: 0 0.5vh;
   background-color: #ffffff;
   padding: 2vh;
 }
@@ -187,17 +134,10 @@ input[type=text]:focus {
   justify-content: center;
   align-items: center;
 }
-.totalsInfoContainer > p {
-  font-weight: 600;
-  font-size: small;
-}
-.flex-row > svg {
-  height: 3vh;
-  width: 3vh;
-}
+.totalsInfoContainer > p { font-weight: 600; font-size: small; }
 
 
-/* INGREDIENTS PAGE */
+/* SELECTED ITEMS PAGE */
 p.emptyText {
   text-transform: none;
   text-align: center;
@@ -205,8 +145,12 @@ p.emptyText {
   padding-top: 30vh;
 }
 .selectedItemsList {
+  height: 80vh;
   margin: 0 0 10vh 0;
+  overflow: scroll;
+  scrollbar-width: none;
 }
+#selectedItemsList::-webkit-scrollbar { display: none; }
 .selectedItemContainer {
   display: flex;
   flex-direction: row;
@@ -216,16 +160,7 @@ p.emptyText {
   margin-bottom: 2vh;
   background-color: #ffffff;
 }
-.selectedItemImgContainer {
-  height: 2vh;
-  width: 2vh;
-  background-color: teal;
-  border-radius: 10px;
-}
-.selectedFoodItemInfoContainer > p {
-  font-size: small;
-}
-
+.selectedFoodItemInfoContainer > p { font-size: small; max-width: 10vw; }
 
 
 /* FOOTER */
@@ -241,10 +176,4 @@ p.emptyText {
   height: 5vh;
   width: 100%;
 }
-.footer-item {
-  padding: 2vh 5vh;
-}
-.footer-item > svg {
-  width: 3vh;
-  height: auto;
-}
+.footer-item { padding: 2vh 5vh; }

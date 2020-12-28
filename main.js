@@ -465,7 +465,7 @@ function loadItems() {
                   selectedFoodItemContainer.className = "selectedItemContainer";
                   selectedItemsList.appendChild(selectedFoodItemContainer);
 
-                  const stats = ["ingredient", "kcal", "carbohydrates", "protein", "fat"]
+                  const stats = ["ingredient", "kcal", "carbs", "protein", "fat"]
                   for (let l = 0; l < stats.length; l++) {
                         let selectedFoodItemInfoContainer = document.createElement("div");
                         selectedFoodItemInfoContainer.className = "selectedFoodItemInfoContainer";
