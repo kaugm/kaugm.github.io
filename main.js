@@ -609,4 +609,10 @@ function logMacros() {
       el.select();
       document.execCommand('copy');
       document.body.removeChild(el);
+      // OPEN IOS SHORTCUT
+      if (copyText == "0,0,0,0") {
+            alert("Fasting today?")
+      } else {
+            window.open("shortcuts://run-shortcut?name=Log%20Macros");
+      }
 }
