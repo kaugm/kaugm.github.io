@@ -16,17 +16,13 @@ p {
 .hidden {
   display: none;
 }
-
-/* SHARED STYLES TO BE PUT ON OTHER ELEMENTS */
-.flew-row {
-  display: flex;
-  flex-direction: row;
+svg {
+  height: 3vh;
+  width: 3vh;
 }
-.flew-column {
-  display: flex;
-  flex-direction: column;
+svg:hover {
+  fill: #e69e5b;
 }
-/* END SHARED ELEMENTS */
 
 
 @media only screen and (max-width: 1284px) {
@@ -38,8 +34,22 @@ p {
   padding: 5vw 10vw 10vw 10vw;
 }
 
-.header > p, #mealContent > p, #ingredientsContent > p {
-  font-size: xx-large;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-row > div {
+  padding: 2vh;
+}
+
+
+
+
+
+.flex-row > p, #searchContent > p {
+  font-size: x-large;
   font-weight: 600;
   letter-spacing: -1px;
 }
@@ -171,21 +181,19 @@ input[type=text]:focus {
   background-color: #ffffff;
   padding: 2vh;
 }
-.totalsImgContainer {
-  background-color: rgb(161, 199, 243);
-  border-radius: 10px;
-  height: 10vh;
-  width: 10vh;
+.totalsInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .totalsInfoContainer > p {
   font-weight: 600;
+  font-size: small;
 }
-button > svg {
+.flex-row > svg {
+  height: 3vh;
   width: 3vh;
-  height: auto;
-}
-button:active > svg {
-  fill: #e69e5b;
 }
 
 
@@ -214,6 +222,9 @@ p.emptyText {
   background-color: teal;
   border-radius: 10px;
 }
+.selectedFoodItemInfoContainer > p {
+  font-size: small;
+}
 
 
 
@@ -224,20 +235,16 @@ p.emptyText {
   justify-content: space-evenly;
   background-color: #f2f6f9;
   align-items: center;
-  padding: 3vh 0 3vh 0;
+  padding: 1vh 0 1vh 0;
   position: fixed;
   bottom: 0;
   height: 5vh;
   width: 100%;
 }
 .footer-item {
-  border: 1px solid red;
-  padding: 2vh 4vh;
+  padding: 2vh 5vh;
 }
 .footer-item > svg {
-  width: 4vh;
+  width: 3vh;
   height: auto;
-}
-.footer-item > svg:hover {
-  fill: #e69e5b;
 }

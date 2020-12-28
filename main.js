@@ -310,15 +310,23 @@ const jsonData = {
 
 // INITIAL ITEMS LOAD
 let kcalTotal = 0, carbohydratesTotal = 0, proteinTotal = 0, fatTotal = 0;
+// GET TOTAL <P> ELEMENTS
+let pKcalTotal = document.getElementById("kcalTotal");
+let pCarbohydratesTotal = document.getElementById("carbohydratesTotal");
+let pProteinTotal = document.getElementById("proteinTotal");
+let pFatTotal = document.getElementById("fatTotal");
+
 function loadItems() {
 
-      // SEARCH PAGE
-      // HIDE CONTENT FIRST
+      // HIDE SPECIFIC CONTENT FIRST
       const searchContent = document.getElementById("searchContent");
       searchContent.style.display = "none";
       const ingredientsContent = document.getElementById("ingredientsContent");
       ingredientsContent.style.display = "none";
+      const selectedFoodItemsClearButton = document.getElementById("selectedFoodItemsClearButton");
+      selectedFoodItemsClearButton.style.display = "none";
 
+      // SEARCH PAGE
       // APPEND ALL ELEMENTS WITH FUNCTIONS
       let itemListDiv = document.getElementById("itemList");
       for (let i = 0; i < jsonData.data.length; i++) {
@@ -379,7 +387,7 @@ function loadItems() {
             sizeInput.autocomplete = "off";
             sizeInput.className = "inputCustomAmount";
 
-            // BUTTONS
+            // INCREMENT + DECREMENT BUTTONS
             let lessButton = document.createElement("button");
             let moreButton = document.createElement("button");
             lessButton.className = "button square left";
@@ -415,13 +423,6 @@ function loadItems() {
             logButton.className = "button logButton";
             logButton.addEventListener("click", function() {
                   // CALCULATE MACRO TOTALS AND UPDATE THEM + ADD INGREDIENT TO LIST
-                  //console.log(NewValue + ' ' + jsonData.data[i].ingredient);
-
-                  // GET TOTAL P ELEMENTS
-                  let pKcalTotal = document.getElementById("kcalTotal");
-                  let pCarbohydratesTotal = document.getElementById("carbohydratesTotal");
-                  let pProteinTotal = document.getElementById("proteinTotal");
-                  let pFatTotal = document.getElementById("fatTotal");
 
                   // GET USER INPUT AMOUNT
                   let selectedAmount;
@@ -431,7 +432,7 @@ function loadItems() {
                         selectedAmount = sizeInput.value;
                   }
 
-                  // TOTALS FOR INGREDIENT
+                  // MACRO TOTALS FOR INGREDIENT
                   itemKcal = Math.round( jsonData.data[i].calories * ( selectedAmount / jsonData.data[i].size ));
                   itemCarbohydrates = Math.round( jsonData.data[i].carbohydrates * ( selectedAmount / jsonData.data[i].size ));
                   itemProtein = Math.round( jsonData.data[i].protein * ( selectedAmount / jsonData.data[i].size ));
@@ -451,12 +452,13 @@ function loadItems() {
                   pFatTotal.innerHTML = fatTotal;
 
                   // ADD LIST ITEM TO INGREDIENTS PAGE
-                  // REMOVE EMPTY TEXT
+                  // REMOVE EMPTY TEXT + UNHIDE CLEAR BUTTON
                   var emptyText =  document.getElementById('emptyText');
                   if (typeof(emptyText) != 'undefined' && emptyText != null)
                   {
                         emptyText.remove();
                   }
+                  selectedFoodItemsClearButton.style.display = "";
 
                   const selectedItemsList = document.getElementById("selectedItemsList");
                   let selectedFoodItemContainer = document.createElement("div");
@@ -557,6 +559,40 @@ function switchTo(page) {
             mealButton.classList.remove("active");
             ingredientsButton.classList.remove("active");
       }
+}
+
+function clearItems() {
+      // RESET CUMULATIVE TOTALS
+      kcalTotal = 0;
+      carbohydratesTotal = 0;
+      proteinTotal = 0;
+      fatTotal = 0;
+
+      // HOME PAGE - UPDATE TOTAL P ELEMENTS
+      pKcalTotal.innerHTML = kcalTotal;
+      pCarbohydratesTotal.innerHTML = carbohydratesTotal;
+      pProteinTotal.innerHTML = proteinTotal;
+      pFatTotal.innerHTML = fatTotal;
+
+      // REMOVE ALL SELECTED FOOD ITEM ELEMENTS
+      let parentContainer = document.getElementById("selectedItemsList");
+      let childNodes = parentContainer.childNodes;
+      for(var i=childNodes.length-1;i >= 0;i--){
+            var childNode = childNodes[i];
+            if(childNode.className == 'selectedItemContainer'){
+                childNode.parentNode.removeChild(childNode);
+            }
+        }
+      // RE-ADD EMPTY TEXT
+      let pEmptyText = document.createElement("p");
+      let pEmptyTextEm = document.createElement("em");
+      pEmptyText.className = "emptyText";
+      pEmptyText.id = "emptyText";
+      pEmptyTextEm.innerHTML = "Such emptiness.. WOW";
+      parentContainer.appendChild(pEmptyText);
+      pEmptyText.appendChild(pEmptyTextEm);
+      // HIDE CLEAR BUTTON
+      selectedFoodItemsClearButton.style.display = "none";
 }
 
 
