@@ -364,12 +364,6 @@ function loadItems() {
             infoSubContainer.appendChild(pTitle);
             infoSubContainer.appendChild(pInfo);
 
-            // CREATE AND APPEND IMG -> NEED TO REPLACE THIS WIH AND ACTUAL IMG (MEAT ICON, CARB ICON, VEG, FRUIT, OIL, ETC)
-            let imgIcon = document.createElement("p");
-            imgIcon.innerHTML = "IMG";
-            imgIcon.style.border = "1px solid red";
-            infoContainer.appendChild(imgIcon);
-
             // APPEND CONTENT TO BE SHOWN WHEN ITEM CLICKED
             let inputDiv = document.createElement("div");
             inputDiv.className = "inputContainer";

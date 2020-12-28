@@ -29,7 +29,7 @@ svg:hover { fill: #e69e5b; }
 .flex-row > div { padding: 2vh; }
 .flex-row > p, #searchContent > p {
   font-size: x-large;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -1px;
 }
 
@@ -65,7 +65,8 @@ input[type=text]:focus {
   flex-direction: column;
   justify-content: space-evenly;
   border-radius: 10px;
-  padding: 3vh;
+  padding: 1vh;
+  margin-top: 2vh;
   margin-bottom: 2vh;
   background-color: #ffffff;
 }
