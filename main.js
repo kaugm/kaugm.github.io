@@ -1,5 +1,4 @@
 // MODAL
-
 const imgModal = document.getElementById("imgModal");
 const selectedImg = document.getElementById("selectedImg");
 const selectedP = document.getElementById("selectedP");
@@ -56,13 +55,20 @@ window.addEventListener("scroll", function() {
         let objectBottom = section.offsetTop + section.offsetHeight;
         let windowBottom = (window.pageYOffset + window.innerHeight) * 1.2;
 
-        console.log(objectBottom, windowBottom);
+        // console.log(objectBottom, windowBottom);
 
         if (windowBottom > objectBottom) {
-            console.log('making element appear')
+            console.log('New section element is now visible on the screen')
             section.classList.remove("hidden");
         }
     })
+})
+
+
+// BUTTON CLICK TO SCROLL TO DOWN
+let arrowDiv = document.querySelector(".centeredDiv");
+arrowDiv.addEventListener("click", function() {
+    window.scrollBy(0, (window.innerHeight / 2));
 })
 
 

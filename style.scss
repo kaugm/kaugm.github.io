@@ -11,6 +11,9 @@ $font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 // CSS
+html {
+    scroll-behavior: smooth;
+  }
 body {
     background-color: black;
     padding: 1em 2em;
@@ -229,6 +232,23 @@ svg {
 
 .hidden {
     opacity: 0;
+}
+.centeredDiv {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+
+    & > svg {
+        width: 56px;
+        height: 56px;
+        position: relative;
+        top: 0;
+        transition: 1s;
+    }
+    &:hover svg {
+        transform: scale(1.2);
+        top: 20px;
+    }
 }
 
 
