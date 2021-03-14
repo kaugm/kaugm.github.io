@@ -1,0 +1,286 @@
+body {
+  background-color: black;
+  padding: 1em 2em;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+section {
+  padding: 8rem 22rem;
+  -webkit-transition: opacity 1.6s;
+  transition: opacity 1.6s;
+}
+
+section > p, section > div > p {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+section > div > p {
+  letter-spacing: 1px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav button {
+  border: none;
+  color: white;
+  background-color: inherit;
+  font-weight: 600;
+  padding: 1rem;
+  -webkit-transition: 1s border-bottom;
+  transition: 1s border-bottom;
+}
+
+nav button:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 0px;
+  background: transparent;
+  -webkit-transition: width .5s ease, background-color .5s ease;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+nav button:hover:after {
+  width: 100%;
+  background: white;
+}
+
+nav > p {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+p {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  color: white;
+}
+
+#experienceSection, #educationSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#experienceSection > div, #educationSection > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 400px;
+}
+
+.jobDetails, .eduDetails {
+  margin: 2rem 0;
+}
+
+.jobDetails > p, .eduDetails > p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0.4rem 0;
+}
+
+.jobDetails > p:nth-child(1), .eduDetails > p:nth-child(1) {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.grid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+.grid-container img {
+  max-width: 280px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin: 0.3em;
+}
+
+.grid-container img:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.grid-container img:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+#contact > p {
+  margin: 6rem auto;
+  text-align: center;
+}
+
+#contact > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contact svg {
+  width: 36px;
+  height: 36px;
+  margin: 0 6rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#contact svg:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#contact svg:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal .modal-content {
+  margin: 8vh auto;
+  display: block;
+  width: 70%;
+  max-width: 700px;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  border-radius: 2px;
+}
+
+.modal .closeButton {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.modal .prevButton {
+  position: absolute;
+  top: 45%;
+  left: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.modal .nextButton {
+  position: absolute;
+  top: 45%;
+  right: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.modal .closeButton:hover, .modal .prevButton:hover, .modal .nextButton:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.modal .closeButton:active, .modal .prevButton:active, .modal .nextButton:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */
