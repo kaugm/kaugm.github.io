@@ -141,7 +141,7 @@ svg {
 }
 
 .grid-container img {
-  max-width: 280px;
+  max-width: 340px;
   -webkit-transition: 1s;
   transition: 1s;
   margin: 0.3em;
