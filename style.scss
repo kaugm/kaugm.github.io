@@ -9,6 +9,20 @@ $font-family: 'Barlow Semi Condensed', sans-serif;
     from { opacity: 0}
     to { opacity: 1}
 }
+@keyframes bounce {
+    0%   {
+        transform: scale(1);
+        top: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        top: 20px;
+    }
+    100%   {
+        transform: scale(1);
+        top: 0;
+    }
+}
 
 // CSS
 html {
@@ -25,11 +39,11 @@ body {
 }
 
 section {
-    padding: 8rem 22rem;
+    padding: 8rem 24rem;
     transition: opacity 1.6s;
 
     & > p, & > div > p {
-        font-size: 3rem;
+        font-size: 2.4rem;
         font-weight: 600;
     }
     & > div > p {
@@ -144,12 +158,6 @@ svg {
 
 
 #contact {
-    & > p {
-        margin: 6rem auto;
-        text-align: center;
-
-    }
-
     & > div {
         display: flex;
         flex-direction: row;
@@ -157,7 +165,6 @@ svg {
         align-items: baseline;
         flex-wrap: wrap;
     }
-    
     & svg {
         width: 36px;
         height: 36px;
@@ -207,19 +214,19 @@ svg {
     & .closeButton {
         position: absolute;
         top: 15px;
-        right: 35px;
+        right: 30px;
         transition: 0.3s;
     }
     & .prevButton {
         position: absolute;
         top: 45%;
-        left: 30px;
+        left: 60px;
         transition: 0.3s;
     }
     & .nextButton {
         position: absolute;
         top: 45%;
-        right: 30px;
+        right: 60px;
         transition: 0.3s;
     }
     & .closeButton:hover, .prevButton:hover, .nextButton:hover {
@@ -227,6 +234,12 @@ svg {
     }
     & .closeButton:active, .prevButton:active, .nextButton:active {
         transform: scale(1);
+    }
+    & .nextButton:hover {
+        right: 50px;
+    }
+    & .prevButton:hover {
+        left: 50px;
     }
 }
 
@@ -244,13 +257,14 @@ svg {
         position: relative;
         top: 0;
         transition: 1s;
+        animation: bounce 3s infinite;
     }
     &:hover svg {
         transform: scale(1.2);
         top: 20px;
+        animation: none;
     }
 }
-
 
 
 // PROJECTS PAGE
@@ -262,7 +276,7 @@ svg {
     flex-wrap: wrap;
 
     & > div {
-        width: 700px;
+        width: 600px;
         margin: 0 2em;
 
         & > img {

@@ -16,6 +16,42 @@
   }
 }
 
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    top: 0;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    top: 20px;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    top: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    top: 0;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    top: 20px;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    top: 0;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -32,13 +68,13 @@ body > section:nth-child(2) {
 }
 
 section {
-  padding: 8rem 22rem;
+  padding: 8rem 24rem;
   -webkit-transition: opacity 1.6s;
   transition: opacity 1.6s;
 }
 
 section > p, section > div > p {
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
@@ -194,11 +230,6 @@ svg {
   transition: 0s;
 }
 
-#contact > p {
-  margin: 6rem auto;
-  text-align: center;
-}
-
 #contact > div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,7 +304,7 @@ svg {
 .modal .closeButton {
   position: absolute;
   top: 15px;
-  right: 35px;
+  right: 30px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -281,7 +312,7 @@ svg {
 .modal .prevButton {
   position: absolute;
   top: 45%;
-  left: 30px;
+  left: 60px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -289,7 +320,7 @@ svg {
 .modal .nextButton {
   position: absolute;
   top: 45%;
-  right: 30px;
+  right: 60px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -302,6 +333,14 @@ svg {
 .modal .closeButton:active, .modal .prevButton:active, .modal .nextButton:active {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.modal .nextButton:hover {
+  right: 50px;
+}
+
+.modal .prevButton:hover {
+  left: 50px;
 }
 
 .hidden {
@@ -321,12 +360,16 @@ svg {
   top: 0;
   -webkit-transition: 1s;
   transition: 1s;
+  -webkit-animation: bounce 3s infinite;
+          animation: bounce 3s infinite;
 }
 
 .centeredDiv:hover svg {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   top: 20px;
+  -webkit-animation: none;
+          animation: none;
 }
 
 #projectsSection {
@@ -348,7 +391,7 @@ svg {
 }
 
 #projectsSection > div {
-  width: 700px;
+  width: 600px;
   margin: 0 2em;
 }
 

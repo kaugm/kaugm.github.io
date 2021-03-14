@@ -31,8 +31,21 @@ const nextButton = document.getElementsByClassName("nextButton")[0];
 nextButton.addEventListener("click", function() {
     for (img of imgs) {
         if (img.src == selectedImg.src) {
-            selectedImg.src = img.nextElementSibling.src;
-            selectedP.innerHTML = img.nextElementSibling.alt;
+            if (img.nextElementSibling == null) {
+                selectedImg.src = imgs[0].src;
+                selectedP.innerHTML = imgs[0].alt;
+            } else {
+                selectedImg.src = img.nextElementSibling.src;
+                selectedP.innerHTML = img.nextElementSibling.alt;
+            }
+            selectedImg.animate([
+                // keyframes
+                { opacity: '0' },
+                { opacity: '1' }
+              ], {
+                // timing options
+                duration: 600,
+              });
             break;
         }
     }
@@ -40,8 +53,21 @@ nextButton.addEventListener("click", function() {
 prevButton.addEventListener("click", function() {
     for (img of imgs) {
         if (img.src == selectedImg.src) {
-            selectedImg.src = img.previousElementSibling.src;
-            selectedP.innerHTML = img.previousElementSibling.alt;
+            if (img.previousElementSibling == null) {
+                selectedImg.src = imgs[imgs.length -2].src;
+                selectedP.innerHTML = imgs[imgs.length -2].alt;
+            } else {
+                selectedImg.src = img.previousElementSibling.src;
+                selectedP.innerHTML = img.previousElementSibling.alt;
+            }
+            selectedImg.animate([
+                // keyframes
+                { opacity: '0' },
+                { opacity: '1' }
+              ], {
+                // timing options
+                duration: 600,
+              });
             break;
         }
     }
