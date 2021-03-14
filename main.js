@@ -2,6 +2,7 @@
 
 const imgModal = document.getElementById("imgModal");
 const selectedImg = document.getElementById("selectedImg");
+const selectedP = document.getElementById("selectedP");
 let imgs = document.getElementsByTagName("img");
 // ADD ONCLICK FUNCTION
 for (img of imgs) {
@@ -9,7 +10,8 @@ for (img of imgs) {
         // UNHIDE MODAL
         imgModal.style.display = "block";
         // SET MODAL IMAGE SOURCE
-        selectedImg.src = this.src
+        selectedImg.src = this.src;
+        selectedP.innerHTML = this.alt;
     })
 }
 
@@ -31,6 +33,7 @@ nextButton.addEventListener("click", function() {
     for (img of imgs) {
         if (img.src == selectedImg.src) {
             selectedImg.src = img.nextElementSibling.src;
+            selectedP.innerHTML = img.nextElementSibling.alt;
             break;
         }
     }
@@ -39,6 +42,7 @@ prevButton.addEventListener("click", function() {
     for (img of imgs) {
         if (img.src == selectedImg.src) {
             selectedImg.src = img.previousElementSibling.src;
+            selectedP.innerHTML = img.previousElementSibling.alt;
             break;
         }
     }
@@ -63,7 +67,3 @@ window.addEventListener("scroll", function() {
 
 
 //TODO PROJECTS PAGE
-let btns = document.querySelectorAll("button");
-btns[0].addEventListener("click", function() {
-    alert('sorry dog, this part of the page isnt complete yet');
-})

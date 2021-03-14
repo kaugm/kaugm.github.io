@@ -87,6 +87,10 @@ nav button:hover:after {
   background: white;
 }
 
+nav button:active {
+  outline: none;
+}
+
 nav > p {
   font-family: "Barlow Semi Condensed", sans-serif;
   text-transform: uppercase;
@@ -255,6 +259,13 @@ svg {
   border-radius: 2px;
 }
 
+.modal > p {
+  text-align: center;
+  color: white;
+  font-size: larger;
+  font-weight: 600;
+}
+
 .modal .closeButton {
   position: absolute;
   top: 15px;
@@ -291,5 +302,67 @@ svg {
 
 .hidden {
   opacity: 0;
+}
+
+#projectsSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#projectsSection > div {
+  width: 700px;
+  margin: 0 2em;
+}
+
+#projectsSection > div > img {
+  max-width: 100%;
+}
+
+#projectsSection > div > p:nth-child(2) {
+  font-size: x-large;
+  font-weight: 600;
+}
+
+#projectsSection > div > p:nth-child(3) {
+  font-size: large;
+  font-weight: 400;
+}
+
+#projectsSection > div > button {
+  background-color: white;
+  color: black;
+  font-size: small;
+  font-weight: 600;
+  padding: 1em 1.6em;
+  border: none;
+  border-radius: 25px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+#projectsSection > div > button:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+#projectsSection > div > button:active {
+  outline: none;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0s;
+  transition: 0s;
 }
 /*# sourceMappingURL=style.css.map */

@@ -63,6 +63,9 @@ nav {
         width: 100%;
         background: white;
     }
+    & button:active {
+        outline: none;
+    }
 
     & > p {
         font-family: $font-family;
@@ -191,6 +194,12 @@ svg {
         animation-duration: 0.8s;
         border-radius: 2px;
     }
+    & > p {
+        text-align: center;
+        color: white;
+        font-size: larger;
+        font-weight: 600;
+    }
     // MODAL BUTTONS
     & .closeButton {
         position: absolute;
@@ -218,7 +227,52 @@ svg {
     }
 }
 
-
 .hidden {
     opacity: 0;
+}
+
+
+
+// PROJECTS PAGE
+#projectsSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > div {
+        width: 700px;
+        margin: 0 2em;
+
+        & > img {
+            max-width: 100%;
+        }
+        & > p:nth-child(2) {
+            font-size: x-large;
+            font-weight: 600;
+        }
+        & > p:nth-child(3) {
+            font-size: large;
+            font-weight: 400;
+        }
+        & > button {
+            background-color: white;
+            color: black;
+            font-size: small;
+            font-weight: 600;
+            padding: 1em 1.6em;
+            border: none;
+            border-radius: 25px;
+            transition: 0.6s;
+        }
+        & > button:hover {
+            transform: scale(1.04);
+        }
+        & > button:active {
+            outline: none;
+            transform: scale(1);
+            transition: 0s;
+        }
+    }
 }
