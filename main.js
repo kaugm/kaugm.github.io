@@ -14,7 +14,6 @@ for (img of imgs) {
 }
 
 // MODAL BUTTONS
-
 // CLOSING MODAL
 const closeButton = document.getElementsByClassName("closeButton");
 closeButton[0].addEventListener("click", function() {
@@ -25,11 +24,9 @@ window.onclick = function(e) {
         imgModal.style.display = "none";
     }
 }
-
 // CYCLING THROUGH PHOTOS
 const prevButton = document.getElementsByClassName("prevButton")[0];
 const nextButton = document.getElementsByClassName("nextButton")[0];
-
 nextButton.addEventListener("click", function() {
     for (img of imgs) {
         if (img.src == selectedImg.src) {
@@ -48,6 +45,7 @@ prevButton.addEventListener("click", function() {
 })
 
 
+// SECTION APPEAR ON SCROLL
 let sections = document.querySelectorAll("section");
 window.addEventListener("scroll", function() {
     sections.forEach(function(section) {

@@ -1,7 +1,30 @@
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: black;
   padding: 1em 2em;
   font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body > section:nth-child(2) {
+  -webkit-animation: appear 1s ease-in;
+          animation: appear 1s ease-in;
 }
 
 section {
@@ -33,6 +56,9 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 4em;
+  -webkit-animation: appear 1s ease-in;
+          animation: appear 1s ease-in;
 }
 
 nav button {
@@ -145,6 +171,7 @@ svg {
   -webkit-transition: 1s;
   transition: 1s;
   margin: 0.3em;
+  cursor: pointer;
 }
 
 .grid-container img:hover {
@@ -260,24 +287,6 @@ svg {
 .modal .closeButton:active, .modal .prevButton:active, .modal .nextButton:active {
   -webkit-transform: scale(1);
           transform: scale(1);
-}
-
-@-webkit-keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .hidden {
