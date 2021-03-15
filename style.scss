@@ -39,11 +39,12 @@ body {
 }
 
 section {
-    padding: 8rem 24rem;
+    padding: 8rem 16%;
     transition: opacity 1.6s;
 
     & > p, & > div > p {
-        font-size: 2.4rem;
+        // font-size: 2.4rem;
+        font-size: calc(max(1.6vw, 2.4rem));
         font-weight: 600;
     }
     & > div > p {
@@ -111,7 +112,7 @@ svg {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
     & > div {
         display: flex;
@@ -168,7 +169,7 @@ svg {
     & svg {
         width: 36px;
         height: 36px;
-        margin: 0 6rem;
+        margin: 1rem 6rem;
         transition: 1s;
     }
     & svg:hover {

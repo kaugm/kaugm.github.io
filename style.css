@@ -68,13 +68,13 @@ body > section:nth-child(2) {
 }
 
 section {
-  padding: 8rem 24rem;
+  padding: 8rem 16%;
   -webkit-transition: opacity 1.6s;
   transition: opacity 1.6s;
 }
 
 section > p, section > div > p {
-  font-size: 2.4rem;
+  font-size: calc(max(1.6vw, 2.4rem));
   font-weight: 600;
 }
 
@@ -164,9 +164,8 @@ svg {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 #experienceSection > div, #educationSection > div {
@@ -251,7 +250,7 @@ svg {
 #contact svg {
   width: 36px;
   height: 36px;
-  margin: 0 6rem;
+  margin: 1rem 6rem;
   -webkit-transition: 1s;
   transition: 1s;
 }
