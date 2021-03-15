@@ -99,6 +99,9 @@ p {
 }
 a {
     text-decoration: none;
+    &:active {
+        outline: none;
+    }
 }
 svg {
     width: 24px;
@@ -278,7 +281,7 @@ svg {
 
     & > div {
         width: 600px;
-        margin: 0 2em;
+        margin: 2em;
 
         & > img {
             max-width: 100%;

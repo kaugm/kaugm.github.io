@@ -147,6 +147,10 @@ a {
   text-decoration: none;
 }
 
+a:active {
+  outline: none;
+}
+
 svg {
   width: 24px;
   height: 24px;
@@ -391,7 +395,7 @@ svg {
 
 #projectsSection > div {
   width: 600px;
-  margin: 0 2em;
+  margin: 2em;
 }
 
 #projectsSection > div > img {
