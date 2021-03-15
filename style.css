@@ -68,7 +68,7 @@ body > section:nth-child(2) {
 }
 
 section {
-  padding: 8rem 16%;
+  padding: 6% 16%;
   -webkit-transition: opacity 1.6s;
   transition: opacity 1.6s;
 }
@@ -76,9 +76,6 @@ section {
 section > p, section > div > p {
   font-size: calc(max(1.6vw, 2.4rem));
   font-weight: 600;
-}
-
-section > div > p {
   letter-spacing: 1px;
 }
 
@@ -158,6 +155,35 @@ svg {
   color: white;
 }
 
+.hidden {
+  opacity: 0;
+}
+
+.centeredDiv {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.centeredDiv > svg {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  top: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-animation: bounce 3s infinite;
+          animation: bounce 3s infinite;
+}
+
+.centeredDiv:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  top: 20px;
+  -webkit-animation: none;
+          animation: none;
+}
+
 #experienceSection, #educationSection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,7 +240,7 @@ svg {
 }
 
 .grid-container img {
-  max-width: 340px;
+  max-width: calc(max(240px,14vw));
   -webkit-transition: 1s;
   transition: 1s;
   margin: 0.3em;
@@ -222,8 +248,8 @@ svg {
 }
 
 .grid-container img:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
 }
 
 .grid-container img:active {
@@ -260,8 +286,9 @@ svg {
 }
 
 #contact svg:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  margin: 1rem 12rem;
 }
 
 #contact svg:active {
@@ -346,35 +373,6 @@ svg {
   left: 50px;
 }
 
-.hidden {
-  opacity: 0;
-}
-
-.centeredDiv {
-  margin: 0 auto;
-  width: 50%;
-  text-align: center;
-}
-
-.centeredDiv > svg {
-  width: 56px;
-  height: 56px;
-  position: relative;
-  top: 0;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-animation: bounce 3s infinite;
-          animation: bounce 3s infinite;
-}
-
-.centeredDiv:hover svg {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  top: 20px;
-  -webkit-animation: none;
-          animation: none;
-}
-
 #projectsSection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -435,5 +433,66 @@ svg {
           transform: scale(1);
   -webkit-transition: 0s;
   transition: 0s;
+}
+
+.resumeSection > div > p {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.resumeSection > div ul {
+  color: white;
+}
+
+.resumeSection > div li {
+  color: white;
+  font-size: 1.4rem;
+  margin: 0.4rem 0;
+  list-style-type: none;
+  position: relative;
+  padding-left: 15px;
+}
+
+.resumeSection > div li:before {
+  content: "\25BA \0020";
+  font-size: 12px;
+  position: absolute;
+  top: 7px;
+  left: -10px;
+}
+
+.resumeSection > div .heading {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.resumeSection > button {
+  background-color: white;
+  color: black;
+  font-size: medium;
+  font-weight: 600;
+  padding: 1em 3.6em;
+  margin: 0 auto 6rem auto;
+  border: none;
+  border-radius: 30px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.resumeSection > button:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.resumeSection > button:active {
+  outline: none;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.resumeSection > button:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

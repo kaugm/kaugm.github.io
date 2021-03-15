@@ -1,5 +1,5 @@
 // VARIABLES
-$image-width: 340px;
+$image-width: calc(max(240px,14vw)); // 340px;
 $font-family: 'Barlow Semi Condensed', sans-serif;
 
 // ANIMATIONS
@@ -38,20 +38,20 @@ body {
     }
 }
 
+// SECTION AND SECTION HEADING
 section {
-    padding: 8rem 16%;
+    padding: 6% 16%;
     transition: opacity 1.6s;
 
     & > p, & > div > p {
         // font-size: 2.4rem;
         font-size: calc(max(1.6vw, 2.4rem));
         font-weight: 600;
-    }
-    & > div > p {
         letter-spacing: 1px;
     }
 }
 
+// NAV SECTION
 nav {
     display: flex;
     flex-direction: row;
@@ -103,14 +103,39 @@ a {
         outline: none;
     }
 }
+
+// SVG + INTRO SECTION + HIDDEN CLASS
 svg {
     width: 24px;
     height: 24px;
     fill: white;
     color: white;
 }
+.hidden {
+    opacity: 0;
+}
+.centeredDiv {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+
+    & > svg {
+        width: 56px;
+        height: 56px;
+        position: relative;
+        top: 0;
+        transition: 1s;
+        animation: bounce 3s infinite;
+    }
+    &:hover svg {
+        transform: scale(1.2);
+        top: 20px;
+        animation: none;
+    }
+}
 
 
+// EXPERIENCE AND EDUCATION SECTIONS
 #experienceSection, #educationSection {
     display: flex;
     flex-direction: row;
@@ -137,7 +162,7 @@ svg {
     }
 }
 
-
+// PHOTOS SECTION
 .grid-container {
     display: flex;
     flex-direction: row;
@@ -152,7 +177,7 @@ svg {
         cursor: pointer;
     }
     & img:hover {
-        transform: scale(1.02);
+        transform: scale(0.96);
     }
     & img:active {
         transform: scale(1);
@@ -160,7 +185,7 @@ svg {
     }
 }
 
-
+// CONTACT SECTION
 #contact {
     & > div {
         display: flex;
@@ -176,7 +201,8 @@ svg {
         transition: 1s;
     }
     & svg:hover {
-        transform: scale(1.2);
+        transform: scale(1.4);
+        margin: 1rem 12rem;
     }
     & svg:active {
         transform: scale(1);
@@ -247,29 +273,6 @@ svg {
     }
 }
 
-.hidden {
-    opacity: 0;
-}
-.centeredDiv {
-    margin: 0 auto;
-    width: 50%;
-    text-align: center;
-
-    & > svg {
-        width: 56px;
-        height: 56px;
-        position: relative;
-        top: 0;
-        transition: 1s;
-        animation: bounce 3s infinite;
-    }
-    &:hover svg {
-        transform: scale(1.2);
-        top: 20px;
-        animation: none;
-    }
-}
-
 
 // PROJECTS PAGE
 #projectsSection {
@@ -313,4 +316,62 @@ svg {
             transition: 0s;
         }
     }
+}
+
+
+// RESUME PAGE
+.resumeSection {
+    & > div {
+        & > p {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        & ul {
+            color: white;
+        }
+        & li {
+            color: white;
+            font-size: 1.4rem;
+            margin: 0.4rem 0;
+            list-style-type: none;
+            position: relative;
+            padding-left: 15px;
+        }
+        & li:before {
+            content: "\25BA \0020";
+            font-size: 12px;
+            position: absolute;
+            top: 7px;
+            left: -10px;
+          }
+        & .heading {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+    }
+
+    & > button {
+        background-color: white;
+        color: black;
+        font-size: medium;
+        font-weight: 600;
+        padding: 1em 3.6em;
+        margin: 0 auto 6rem auto;
+        border: none;
+        border-radius: 30px;
+        transition: 0.6s;
+    }
+    & > button:hover {
+        transform: scale(1.04);
+    }
+    & > button:active {
+        outline: none;
+        transform: scale(1);
+        transition: 0s;
+    }
+    & > button:focus {
+        outline: none;
+    }
+
+
 }

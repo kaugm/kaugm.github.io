@@ -80,14 +80,17 @@ window.addEventListener("scroll", function() {
     sections.forEach(function(section) {
         let objectBottom = section.offsetTop + section.offsetHeight;
         let windowBottom = (window.pageYOffset + window.innerHeight) * 1.2;
-
-        // console.log(objectBottom, windowBottom);
-
         if (windowBottom > objectBottom) {
             console.log('New section element is now visible on the screen')
             section.classList.remove("hidden");
         }
     })
+    // STOP ARROWDIV ANIMATION WHEN AFTER SCROLLING DOWN A CERTAIN POINT
+    if (window.pageYOffset >= 575) {
+        arrowDiv.childNodes[1].style.animation = "none";
+    } else {
+        arrowDiv.childNodes[1].style.animation = "bounce 3s infinite";
+    }
 })
 
 
@@ -98,4 +101,17 @@ arrowDiv.addEventListener("click", function() {
 })
 
 
+
+// RESUME PAGE
+let downloadBtn = document.getElementById("downloadBtn");
+downloadBtn.addEventListener("click", function() {
+    downloadBtn.parentElement.style.display = "none";
+})
+
+
 //TODO PROJECTS PAGE
+let btn = querySelector("button");
+btn.addEventListener("click", function() {
+    alert('sorry dog, this page isnt ready yet.')
+})
+
