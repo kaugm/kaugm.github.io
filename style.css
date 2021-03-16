@@ -69,8 +69,8 @@ body > section:nth-child(2) {
 
 section {
   padding: 6% 16%;
-  -webkit-transition: opacity 1.6s;
-  transition: opacity 1.6s;
+  -webkit-transition: opacity 2.2s;
+  transition: opacity 2.2s;
 }
 
 section > p, section > div > p {
@@ -142,9 +142,11 @@ p {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
-a:active {
+target
+a:active, a:focus {
   outline: none;
 }
 
@@ -170,6 +172,7 @@ svg {
   height: 56px;
   position: relative;
   top: 0;
+  bottom: 0;
   -webkit-transition: 1s;
   transition: 1s;
   -webkit-animation: bounce 3s infinite;
@@ -331,6 +334,11 @@ svg {
   font-weight: 600;
 }
 
+.modal svg {
+  height: 32px;
+  width: 32px;
+}
+
 .modal .closeButton {
   position: absolute;
   top: 15px;
@@ -435,16 +443,16 @@ svg {
   transition: 0s;
 }
 
-.resumeSection > div > p {
+#resumeSection > div > p {
   font-size: 1.4rem;
   font-weight: 600;
 }
 
-.resumeSection > div ul {
+#resumeSection > div ul {
   color: white;
 }
 
-.resumeSection > div li {
+#resumeSection > div li {
   color: white;
   font-size: 1.4rem;
   margin: 0.4rem 0;
@@ -453,7 +461,7 @@ svg {
   padding-left: 15px;
 }
 
-.resumeSection > div li:before {
+#resumeSection > div li:before {
   content: "\25BA \0020";
   font-size: 12px;
   position: absolute;
@@ -461,38 +469,20 @@ svg {
   left: -10px;
 }
 
-.resumeSection > div .heading {
+#resumeSection > div .heading {
   font-size: 1.6rem;
   text-transform: uppercase;
 }
 
-.resumeSection > button {
-  background-color: white;
-  color: black;
-  font-size: medium;
-  font-weight: 600;
-  padding: 1em 3.6em;
-  margin: 0 auto 6rem auto;
-  border: none;
-  border-radius: 30px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+#downloadResume {
+  -webkit-transition: top 0.2s, -webkit-transform 1s;
+  transition: top 0.2s, -webkit-transform 1s;
+  transition: transform 1s, top 0.2s;
+  transition: transform 1s, top 0.2s, -webkit-transform 1s;
 }
 
-.resumeSection > button:hover {
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04);
-}
-
-.resumeSection > button:active {
-  outline: none;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: 0s;
-  transition: 0s;
-}
-
-.resumeSection > button:focus {
-  outline: none;
+#downloadResume:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
 }
 /*# sourceMappingURL=style.css.map */

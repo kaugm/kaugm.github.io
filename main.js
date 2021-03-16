@@ -103,10 +103,10 @@ arrowDiv.addEventListener("click", function() {
 
 
 // RESUME PAGE
-let downloadBtn = document.getElementById("downloadBtn");
-downloadBtn.addEventListener("click", function() {
-    downloadBtn.parentElement.style.display = "none";
-})
+// let downloadBtn = document.getElementById("resumeDownload");
+// downloadBtn.addEventListener("click", function() {
+//     downloadBtn.parentElement.style.display = "none";
+// })
 
 
 //TODO PROJECTS PAGE
