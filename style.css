@@ -208,11 +208,17 @@ svg {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  width: 400px;
+  width: 420px;
 }
 
 .jobDetails, .eduDetails {
-  margin: 2rem 0;
+  margin: 1rem 0;
+  padding: 1rem 3rem;
+  position: relative;
+  left: 0;
+  border: 2px solid black;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .jobDetails > p, .eduDetails > p {
@@ -224,6 +230,28 @@ svg {
 .jobDetails > p:nth-child(1), .eduDetails > p:nth-child(1) {
   text-decoration: underline;
   text-underline-offset: 8px;
+}
+
+.jobDetails svg, .eduDetails svg {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 24px;
+  width: 24px;
+  fill: white;
+  color: white;
+  margin: 0;
+  opacity: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.jobDetails .none, .eduDetails .none {
+  display: none;
+}
+
+.jobDetails .shown, .eduDetails .shown {
+  display: block;
 }
 
 .grid-container {
@@ -316,7 +344,11 @@ svg {
 }
 
 .modal .modal-content {
-  margin: 8vh auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   display: block;
   width: 70%;
   max-width: 700px;
@@ -327,7 +359,11 @@ svg {
   border-radius: 2px;
 }
 
-.modal > p {
+.modal .modal-content img {
+  width: 100%;
+}
+
+.modal .modal-content p {
   text-align: center;
   color: white;
   font-size: larger;
@@ -339,7 +375,7 @@ svg {
   width: 32px;
 }
 
-.modal .closeButton {
+.modal svg.closeButton {
   position: absolute;
   top: 15px;
   right: 30px;
@@ -347,7 +383,7 @@ svg {
   transition: 0.3s;
 }
 
-.modal .prevButton {
+.modal svg.prevButton {
   position: absolute;
   top: 45%;
   left: 60px;
@@ -355,12 +391,20 @@ svg {
   transition: 0.3s;
 }
 
-.modal .nextButton {
+.modal svg.prevButton:hover {
+  left: 50px;
+}
+
+.modal svg.nextButton {
   position: absolute;
   top: 45%;
   right: 60px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.modal svg.nextButton:hover {
+  right: 50px;
 }
 
 .modal .closeButton:hover, .modal .prevButton:hover, .modal .nextButton:hover {
@@ -371,14 +415,6 @@ svg {
 .modal .closeButton:active, .modal .prevButton:active, .modal .nextButton:active {
   -webkit-transform: scale(1);
           transform: scale(1);
-}
-
-.modal .nextButton:hover {
-  right: 50px;
-}
-
-.modal .prevButton:hover {
-  left: 50px;
 }
 
 #projectsSection {

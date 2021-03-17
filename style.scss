@@ -6,8 +6,8 @@ $font-family: 'Barlow Semi Condensed', sans-serif;
 @keyframes appear {
     // from {transform:scale(0)}
     // to {transform:scale(1)}
-    from { opacity: 0}
-    to { opacity: 1}
+    from { opacity: 0;}
+    to { opacity: 1;}
 }
 @keyframes bounce {
     0%   {
@@ -148,12 +148,17 @@ svg {
     & > div {
         display: flex;
         justify-content: flex-start;
-        width: 400px;
+        width: 420px;
     }
 }
 
 .jobDetails, .eduDetails {
-    margin: 2rem 0;
+    margin: 1rem 0; //2.0rem 0
+    padding: 1rem 3rem;
+    position: relative;
+    left: 0;
+    border: 2px solid black;
+    transition: 0.6s;
     & > p {
         font-size: 1.4rem;
         font-weight: 600;
@@ -162,6 +167,26 @@ svg {
     & > p:nth-child(1) {
         text-decoration: underline;
         text-underline-offset: 8px;
+    }
+
+    & svg {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        height: 24px;
+        width: 24px;
+        fill: white;
+        color: white;
+        margin: 0;
+        opacity: 0;
+        transition: 0.6s;
+    }
+
+    & .none {
+        display: none;
+    }
+    & .shown {
+        display: block;
     }
 }
 
@@ -229,54 +254,66 @@ svg {
     background-color: rgba(0,0,0,0.9);
 
     & .modal-content {
-        margin: 8vh auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         display: block;
         width: 70%;
         max-width: 700px;
         animation-name: appear;
         animation-duration: 0.8s;
         border-radius: 2px;
+
+        & img {
+            width: 100%;
+        }
+        & p {
+            text-align: center;
+            color: white;
+            font-size: larger;
+            font-weight: 600;
+        }
     }
-    & > p {
-        text-align: center;
-        color: white;
-        font-size: larger;
-        font-weight: 600;
-    }
+    
     // MODAL BUTTONS
     & svg {
         height: 32px;
         width: 32px;
+
+        &.closeButton {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            transition: 0.3s;
+        }
+        &.prevButton {
+            position: absolute;
+            top: 45%;
+            left: 60px;
+            transition: 0.3s;
+
+            &:hover {
+                left: 50px;
+            }
+        }
+        &.nextButton {
+            position: absolute;
+            top: 45%;
+            right: 60px;
+            transition: 0.3s;
+
+            &:hover {
+                right: 50px;
+            }
+        }
     }
-    & .closeButton {
-        position: absolute;
-        top: 15px;
-        right: 30px;
-        transition: 0.3s;
-    }
-    & .prevButton {
-        position: absolute;
-        top: 45%;
-        left: 60px;
-        transition: 0.3s;
-    }
-    & .nextButton {
-        position: absolute;
-        top: 45%;
-        right: 60px;
-        transition: 0.3s;
-    }
+    
     & .closeButton:hover, .prevButton:hover, .nextButton:hover {
         transform: scale(2);
     }
     & .closeButton:active, .prevButton:active, .nextButton:active {
         transform: scale(1);
-    }
-    & .nextButton:hover {
-        right: 50px;
-    }
-    & .prevButton:hover {
-        left: 50px;
     }
 }
 

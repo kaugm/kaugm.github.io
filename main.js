@@ -2,7 +2,7 @@
 const imgModal = document.getElementById("imgModal");
 const selectedImg = document.getElementById("selectedImg");
 const selectedP = document.getElementById("selectedP");
-let imgs = document.getElementsByTagName("img");
+let imgs = document.querySelectorAll("img");
 // ADD ONCLICK FUNCTION
 for (img of imgs) {
     img.addEventListener("click", function() {
@@ -74,6 +74,7 @@ prevButton.addEventListener("click", function() {
 })
 
 
+// SCROLLING
 // SECTION APPEAR ON SCROLL
 let sections = document.querySelectorAll("section");
 window.addEventListener("scroll", function() {
@@ -81,18 +82,16 @@ window.addEventListener("scroll", function() {
         let objectBottom = section.offsetTop + section.offsetHeight;
         let windowBottom = (window.pageYOffset + window.innerHeight) * 1.2;
         if (windowBottom > objectBottom) {
-            console.log('New section element is now visible on the screen')
             section.classList.remove("hidden");
         }
     })
     // STOP ARROWDIV ANIMATION WHEN AFTER SCROLLING DOWN A CERTAIN POINT
-    if (window.pageYOffset >= 575) {
-        arrowDiv.childNodes[1].style.animation = "none";
+    if (window.pageYOffset >= 285) {
+        arrowDiv.childNodes[1].style.opacity = "0";
     } else {
-        arrowDiv.childNodes[1].style.animation = "bounce 3s infinite";
+        arrowDiv.childNodes[1].style.opacity = "1";
     }
 })
-
 
 // BUTTON CLICK TO SCROLL TO DOWN
 let arrowDiv = document.querySelector(".centeredDiv");
@@ -102,16 +101,54 @@ arrowDiv.addEventListener("click", function() {
 
 
 
-// RESUME PAGE
-// let downloadBtn = document.getElementById("resumeDownload");
-// downloadBtn.addEventListener("click", function() {
-//     downloadBtn.parentElement.style.display = "none";
-// })
 
+// JS ANIMATIONS FOR REMAINING ELEMENTS WHEN HOVERING ON SELECTED ELEMENT
+// CONTACT SVGS
+let svgs = document.querySelectorAll("svg");
+for (i=1; i<svgs.length; i++) {
+	svgs[i].addEventListener("mouseover", function() {
+		for (svg of svgs) {
+			svg.style.opacity = "0.5";
+        }
+        this.style.opacity = "1";
+    });
+    svgs[i].addEventListener("mouseout", function() {
+        for (svg of svgs) {
+            svg.style.opacity = "1";
+        }
+    })
+}
 
-//TODO PROJECTS PAGE
-let btn = querySelector("button");
-btn.addEventListener("click", function() {
-    alert('sorry dog, this page isnt ready yet.')
-})
+// JOB + EDUCATION DETAILS
+let divDetails = document.querySelectorAll(".jobDetails, .eduDetails");
 
+for (i=0; i<divDetails.length; i++) {
+    divDetails[i].addEventListener("mouseover", function() { 
+        for (div of divDetails) {
+            div.style.opacity = "0.5";
+        }
+        this.style.opacity = "1";
+        this.querySelector("svg").style.opacity = "1";
+        this.style.left = "20px";
+        this.style.border = "2px solid white";
+    });
+    divDetails[i].addEventListener("mouseout", function() {
+        for (div of divDetails) {
+            div.style.opacity = "1";
+            div.querySelector("svg").style.opacity = "0";
+            div.style.left = "0";
+            div.style.border = "2px solid black";
+        }
+    });
+    divDetails[i].addEventListener("click", function() {
+        // SWAP SHOWN AND HIDDEN CLASSES
+        let ps = this.querySelectorAll("p");
+        for (p of ps) {
+            if (p.className == "shown") {
+                p.className = "none";
+            } else {
+                p.className = "shown";
+            }
+        }
+    });
+}
