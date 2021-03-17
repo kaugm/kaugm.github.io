@@ -23,6 +23,23 @@ $font-family: 'Barlow Semi Condensed', sans-serif;
         top: 0;
     }
 }
+@keyframes alert {
+    0%   {
+        transform: scale(1);
+        top: 0;
+        color: white;
+    }
+    50% {
+        transform: scale(1.4);
+        top: 20px;
+        color: orange;
+    }
+    100%   {
+        transform: scale(1);
+        top: 0;
+        color: white;
+    }
+}
 
 // CSS
 html {
@@ -81,7 +98,7 @@ nav {
         width: 100%;
         background: white;
     }
-    & button:active {
+    & button:active, & button:focus {
         outline: none;
     }
 
@@ -139,7 +156,7 @@ svg {
 
 
 // EXPERIENCE AND EDUCATION SECTIONS
-#experienceSection, #educationSection {
+#experienceSection, #educationSection, #skillsSection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -152,7 +169,7 @@ svg {
     }
 }
 
-.jobDetails, .eduDetails {
+.jobDetails, .eduDetails, .skillDetails {
     margin: 1rem 0; //2.0rem 0
     padding: 1rem 3rem;
     position: relative;
@@ -180,6 +197,11 @@ svg {
         margin: 0;
         opacity: 0;
         transition: 0.6s;
+        
+        &:hover {
+            color: #b98c80;
+            fill: #b98c80;
+        }
     }
 
     & .none {
@@ -225,12 +247,13 @@ svg {
     & svg {
         width: 36px;
         height: 36px;
-        margin: 1rem 6rem;
+        margin: 1rem 4vw; // 6rem
+        position: relative;
         transition: 1s;
     }
     & svg:hover {
         transform: scale(1.4);
-        margin: 1rem 12rem;
+        margin: 1rem 8vw; // 12rem
     }
     & svg:active {
         transform: scale(1);
@@ -392,11 +415,5 @@ svg {
             font-size: 1.6rem;
             text-transform: uppercase;
         }
-    }
-}
-#downloadResume {
-    transition: transform 1s, top 0.2s;
-    &:hover {
-        transform: scale(2);
     }
 }

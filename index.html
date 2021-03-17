@@ -15,9 +15,7 @@
         <nav>
             <p>Karl Martin</p>
             <div>
-                <a href="resume.html">
-                    <button>Resume</button>
-                </a>
+                <button onclick="goToDownload()">Download Resume</button>
                 <!-- <a href="projects.html">
                     <button>Projects</button>
                 </a> -->
@@ -129,7 +127,7 @@
 
                         <p class="none">» Triple Accredited Business School (AACSB, AMBA, EQUIS)</p>
                         <p class="none">» Areas of Study: Supply chain, cross-border finance</p>
-                        <p class="none">» Interactions with real Chinese tech and fintech companies to understand how to do business and navigate the political environment within the PROC</p>
+                        <p class="none">» Interactions with real Chinese tech and fintech companies to understand how to do business and navigate the political environment within the PRC</p>
 
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"></path><circle cx="8" cy="4.5" r="1"></circle></svg>
                     </div>
@@ -148,8 +146,83 @@
                 </div>
             </div>
         </section>
+
+        <section class="hidden" id="skillsSection">
+            <div>
+                <p>Skills</p>
+            </div>
+            <div>
+                <div>
+                    <div class="skillDetails">
+                        <p class="shown">Data Analysis + Visualization</p>
+                        <p class="shown">» SQL</p>
+                        <p class="shown">» Python</p>
+                        <p class="shown">» Tableau</p>
+
+                        <p class="none">» Vizualization: Discovered trends in 17 years of Chicago crime data and created visuals to communicate trends and recommend a course of action. (BUS443, 2018).</p>
+                        <p class="none">» Scraped all of the Portuguese Wikipedia to analyze the most common words, and created a quick search app that retrieves phrases containing a desired word. (2021)</p>
+
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"></path><circle cx="8" cy="4.5" r="1"></circle></svg>
+                    </div>
+                    <div class="skillDetails">
+                        <p class="shown">Technology</p>
+                        <p class="shown">» Networking</p>
+                        <p class="shown">» Linux Administration</p>
+                        <p class="shown">» Citrix Technologies</p>
+                        <p class="shown">» AWS**</p>
+                        <p class="shown">» Azure**</p>
+
+                        <p class="none">» Certified CCNA</p>
+                        <p class="none">» 11+ years using various Linux OS</p>
+                        <p class="none">» General management of Windows, OSX, and Linux systems</p>
+                        <p class="none">» **Currently learning AWS and Azure</p>
+
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"></path><circle cx="8" cy="4.5" r="1"></circle></svg>
+                    </div>
+                    <div class="skillDetails">
+                        <p class="shown">Development</p>
+                        <p class="shown">» HTML + CSS</p>
+                        <p class="shown">» Javascript</p>
+                        <p class="shown">» Python</p>
+
+                        <p class="none">» All of my development skills are self-taught. I pursued development as a means of creating apps / scripts that simplify and/or automate my life.</p>
+                        <p class="none">» I have experience with: No-Framework-WebApps, Flask, Svelte, and React*</p>
+                        <p class="none">» Javascript and Python are works in progress</p>
+
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"></path><circle cx="8" cy="4.5" r="1"></circle></svg>
+                    </div>
+                    <div class="skillDetails">
+                        <p class="shown">Languages</p>
+                        <p class="shown">» Spanish</p>
+                        <p class="shown">» Portuguese</p>
+                        <p class="shown">» German*</p>
+                        <p class="shown">» Turkish**</p>
+
+                        <p class="none">» 11+ years speaking Spanish</p>
+                        <p class="none">» 6+ years speaking Portuguese</p>
+                        <p class="none">» *I speak very basic German, but am debating learning more</p>
+                        <p class="none">» **Currently learning Turkish</p>
+
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"></path><circle cx="8" cy="4.5" r="1"></circle></svg>
+                    </div>
+                    <div class="skillDetails">
+                        <p class="shown">Other + Soft Skills</p>
+                        <p class="shown">» Technical Support</p>
+                        <p class="shown">» Customer Service</p>
+                        <p class="shown">» Customer Success</p>
+                        <p class="shown">» Global Leadership</p>
+
+                        <p class="none">» I have 4 years experience working tier 2+ technical support</p>
+                        <p class="none">» I am experienced in interacting with those from other cultures in a business environment.</p>
+
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"></path><circle cx="8" cy="4.5" r="1"></circle></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="hidden">
-            <p>The Journey</p>
+            <p>Global Citizen</p>
             <div class="grid-container">
                 <img src="img/rio.jpg" alt="Watching the sunrise over Rio de Janeiro, Brazil">
                 <img src="img/uyuni.jpg" alt="Overlanding in Salar de Uyuni, Bolivia">
@@ -164,6 +237,9 @@
 
         <section class="hidden" id="contact">
             <div>
+                <a href="#">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M336 176h40a40 40 0 0140 40v208a40 40 0 01-40 40H136a40 40 0 01-40-40V216a40 40 0 0140-40h40"></path><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 272l80 80 80-80M256 48v288"></path></svg>
+                </a>
                 <a href="https://linkedin.com/in/karlaugustmartin" target="_blank">
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"></path></g></svg>
                 </a>
