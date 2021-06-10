@@ -58,7 +58,7 @@ body {
 // SECTION AND SECTION HEADING
 section {
     padding: 6% 16%;
-    transition: opacity 2.2s;
+    transition: opacity 1.4s;
 
     & > p, & > div > p {
         // font-size: 2.4rem;
@@ -183,7 +183,7 @@ svg {
     }
     & > p:nth-child(1) {
         text-decoration: underline;
-        text-underline-offset: 8px;
+        text-underline-offset: 4px;
     }
 
     & svg {

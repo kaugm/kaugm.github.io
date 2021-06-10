@@ -111,8 +111,8 @@ body > section:nth-child(2) {
 
 section {
   padding: 6% 16%;
-  -webkit-transition: opacity 2.2s;
-  transition: opacity 2.2s;
+  -webkit-transition: opacity 1.4s;
+  transition: opacity 1.4s;
 }
 
 section > p, section > div > p {
@@ -271,7 +271,7 @@ svg {
 
 .jobDetails > p:nth-child(1), .eduDetails > p:nth-child(1), .skillDetails > p:nth-child(1) {
   text-decoration: underline;
-  text-underline-offset: 8px;
+  text-underline-offset: 4px;
 }
 
 .jobDetails svg, .eduDetails svg, .skillDetails svg {
